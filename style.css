@@ -618,52 +618,87 @@ footer a {
 .image-btn {
     position: absolute;
     inset: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
     width: 100%;
     height: 100%;
+
     pointer-events: none;
+
+    padding: 14% 0 10% 0;
+    box-sizing: border-box;
 }
 
+/* wrapper positioning */
+.btn-one,
+.btn-four,
+.btn-two {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    pointer-events: none;
+
+    position: relative;
+}
+
+/* fine tune vertical placement */
+.btn-one {
+    top: 6%;
+}
+
+.btn-four {
+    top: 2%;
+}
+
+.btn-two {
+    top: -2%;
+}
+
+/* actual button */
 .fundCentre-button {
-    font-family: Arial, sans-serif;
-    font-size: clamp(11px, 1vw, 16px);
+    pointer-events: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 42%;
+    min-width: 180px;
+    max-width: 320px;
+
     padding: 1vh 1.5vw;
+
     border-radius: 999px;
     border: none;
-    color: white;
+
     background: #c4306d;
-    cursor: pointer;
-    min-width: 16vw;
+    color: white;
+
+    font-family: Arial, sans-serif;
+    font-size: clamp(11px, 0.9vw, 15px);
+    font-weight: 500;
+
+    text-decoration: none; /* removes underline */
+
     white-space: nowrap;
-    pointer-events: auto;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+.fundCentre-button:hover {
+    transform: scale(1.03);
 }
 
 .second-button {
-    background:#89264f;
-}
-
-.btn-one,
-.btn-two,
-.btn-four {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 20;
-    pointer-events: auto;
-}
-
-/* top */
-.btn-one {
-    top: 18%;
-}
-
-/* ETF middle */
-.btn-four {
-    top: 62%;
-}
-
-/* bottom */
-.btn-two {
-    top: 84%;
+    background: #89264f;
 }
 
 
@@ -675,6 +710,28 @@ footer a {
 /**************************************/
 /******* Mobile Responsive CSS *******/
 /*************************************/
+
+@media screen and (max-width: 768px) {
+
+    .btn-one {
+        top: 165px;
+    }
+
+    .btn-four {
+        top: 445px;
+    }
+
+    .btn-two {
+        top: 720px;
+    }
+
+    .fundCentre-button {
+        width: 190px;
+        font-size: 11px;
+        padding: 8px 14px;
+    }
+}
+
 @media screen and (max-width: 3000px) {
     .uk-container {
         width: 27%;
