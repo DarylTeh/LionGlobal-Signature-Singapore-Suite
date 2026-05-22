@@ -678,19 +678,31 @@ footer a {
     border: none;
 
     background: #c4306d;
-    color: white;
+    color: white !important;
 
     font-family: Arial, sans-serif;
     font-size: clamp(11px, 0.9vw, 15px);
     font-weight: 500;
 
-    text-decoration: none; /* removes underline */
+    text-decoration: none !important;
+    -webkit-text-decoration: none !important;
 
     white-space: nowrap;
 
     cursor: pointer;
 
     transition: all 0.2s ease;
+
+    line-height: 1;
+}
+.fundCentre-button a,
+a.fundCentre-button,
+a.fundCentre-button:hover,
+a.fundCentre-button:focus,
+a.fundCentre-button:active,
+a.fundCentre-button:visited {
+    text-decoration: none !important;
+    color: white !important;
 }
 
 .fundCentre-button:hover {
